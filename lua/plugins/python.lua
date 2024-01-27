@@ -9,11 +9,17 @@ return {
       end
       return vim.tbl_deep_extend("force", opts, {
         name = {
-          "venv", ".venv", "env", ".env"
+          "venv",
+          ".venv",
+          "env",
+          ".env",
         },
       })
     end,
-    keys = { { "<leader>cvs", "<cmd>:VenvSelect<cr>", desc = "Select Virtual Environmet" }, { "<leader>cvc", "<cmd>:VenvSelectCached<cr>", desc = "Use Latest Virtual Environment" } },
+    keys = {
+      { "<leader>cvs", "<cmd>:VenvSelect<cr>", desc = "Select Virtual Environmet" },
+      { "<leader>cvc", "<cmd>:VenvSelectCached<cr>", desc = "Use Latest Virtual Environment" },
+    },
   },
   {
     "wookayin/semshi",
@@ -44,5 +50,20 @@ return {
         end,
       })
     end,
-  }
+  },
+  {
+    "williamboman/mason.nvim",
+    opts = function(_, opts)
+      table.insert(opts.ensure_installed, "black")
+    end,
+  },
+  {
+    "stevearc/conform.nvim",
+    optional = true,
+    opts = {
+      formatters_by_ft = {
+        ["python"] = { "black" },
+      },
+    },
+  },
 }
