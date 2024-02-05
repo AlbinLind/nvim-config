@@ -2,7 +2,7 @@
 -- if true then return {} end
 
 return {
-	-- Setup the lspconfig so that we can have language support
+	--Setup the lspconfig so that we can have language support
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
@@ -31,14 +31,14 @@ return {
 					-- prefix = "icons",
 				},
 				severity_sort = true,
-				--signs = {
-				-- text = {
-				-- [vim.diagnostic.severity.ERROR] = require("config.icons").icons.diagnostics.Error,
-				-- [vim.diagnostic.severity.WARN] = require("config.icons").icons.diagnostics.Warn,
-				-- [vim.diagnostic.severity.HINT] = require("config.icons").icons.diagnostics.Hint,
-				-- [vim.diagnostic.severity.INFO] = require("config.icons").icons.diagnostics.Info,
-				--},
-				--},
+				signs = {
+					text = {
+						[vim.diagnostic.severity.ERROR] = " ",
+						[vim.diagnostic.severity.WARN] = " ",
+						[vim.diagnostic.severity.HINT] = " ",
+						[vim.diagnostic.severity.INFO] = " ",
+					},
+				},
 			},
 		},
 		config = function(_, opts)
@@ -88,11 +88,7 @@ return {
 					["<C-f>"] = cmp.mapping.scroll_docs(4),
 					["<C-Space>"] = cmp.mapping.complete(),
 					["<C-e>"] = cmp.mapping.abort(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-					["<S-CR>"] = cmp.mapping.confirm({
-						behavior = cmp.ConfirmBehavior.Replace,
-						select = true,
-					}), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+					["<C-j>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
 					["<C-CR>"] = function(fallback)
 						cmp.abort()
 						fallback()

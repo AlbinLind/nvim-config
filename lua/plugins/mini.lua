@@ -1,6 +1,20 @@
 return {
 	-- Add ability to comment out code
-	{ "echasnovski/mini.comment", version = "*", event = "BufEnter", opts = {} },
+	{
+		"echasnovski/mini.comment",
+		version = "*",
+		event = "BufEnter",
+		keys = {},
+		opts = {
+
+			mappings = {
+				comment = "gc",
+				comment_line = "<leader>gc",
+				comment_visual = "gc",
+				textobject = "gco",
+			},
+		},
+	},
 
 	-- Add pairing so that brackets close together
 	{

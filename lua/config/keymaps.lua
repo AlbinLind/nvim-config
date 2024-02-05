@@ -7,7 +7,7 @@ vim.g.mapleader = " "
 local map = vim.keymap.set
 
 -- LSP keys
-map({ "n", "v" }, "<leader>cl", "<cmd>LspInfo<cr>", { desc = "Lsp Infor" })
+map({ "n", "v" }, "<leader>cl", "<cmd>LspInfo<cr>", { desc = "Lsp Info" })
 map({ "n", "v" }, "gr", "<cmd>Telescope lsp_references<cr>", { desc = "Grep references" })
 map({ "n", "v" }, "K", vim.lsp.buf.hover, { desc = "Hover over word" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
@@ -15,6 +15,12 @@ map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 
 -- Undo-tree
 map({ "n", "v" }, "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle UndoTree" })
+
+-- Open "file tree"
+map({ "n", "v" }, "<leader>e", vim.cmd.Ex, { desc = "Open file tree" })
+
+-- Lazy Git
+map({ "n", "v" }, "<leader>gg", vim.cmd.LazyGit, { desc = "Open LazyGit" })
 
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
