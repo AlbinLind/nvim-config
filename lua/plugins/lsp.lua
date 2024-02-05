@@ -58,12 +58,9 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"stylua",
-					"black",
 					"pyright",
 					"volar",
 					"rust_analyzer",
-					"codelldb",
 					"dockerls",
 					"docker_compose_language_service",
 				},
