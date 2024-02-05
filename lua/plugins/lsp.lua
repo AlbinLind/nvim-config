@@ -68,6 +68,7 @@ return {
 					function(server_name) -- default handler
 						require("lspconfig")[server_name].setup({ capabilities = capabilities })
 					end,
+					["rust_analyzer"] = function() end, -- Let rustaceanvim load rust_analyzer
 				},
 			})
 

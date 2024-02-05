@@ -102,23 +102,11 @@ return {
 					},
 				},
 			},
-			setup = {
-				rust_analyzer = function()
-					return true
-				end,
-			},
-		},
-	},
-
-	{
-		"nvim-neotest/neotest",
-		dependencies = {
-			"rouge8/neotest-rust",
-		},
-		opts = {
-			adapters = {
-				["neotest-rust"] = {},
-			},
+			-- setup = {
+			-- 	rust_analyzer = function()
+			-- 		return true
+			-- 	end,
+			-- },
 		},
 	},
 }

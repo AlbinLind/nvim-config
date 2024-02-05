@@ -6,6 +6,20 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
+-- Neotest keymaps
+map("n", "<leader>tt", function()
+	require("neotest").run.run(vim.fn.expand("%"))
+end, { desc = "Run File" })
+map("n", "<leader>tT", function()
+	require("neotest").run.run(vim.loop.cwd())
+end, { desc = "Run All Test Files" })
+map("n", "<leader>ts", function()
+	require("neotest").summary.toggle()
+end, { desc = "Toggle Summary" })
+map("n", "<leader>tS", function()
+	require("neotest").run.stop()
+end, { desc = "Stop" })
+
 -- LSP keys
 map({ "n", "v" }, "<leader>cl", "<cmd>LspInfo<cr>", { desc = "Lsp Info" })
 map({ "n", "v" }, "gr", "<cmd>Telescope lsp_references<cr>", { desc = "Grep references" })
@@ -49,7 +63,7 @@ map("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 map("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 
 -- Switch to other buffer
-map("n", "<leader>,,", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
+map("n", "<leader>b,", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
 
 -- Clear search with <esc>
 map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
