@@ -6,6 +6,26 @@ vim.g.mapleader = " "
 
 local map = vim.keymap.set
 
+-- Trouble keymaps
+map("n", "<leader>xx", function()
+	require("trouble").toggle()
+end, { desc = "Trouble Toggle" })
+map("n", "<leader>xw", function()
+	require("trouble").toggle("workspace_diagnostics")
+end, { desc = "Workspace Diagnostic" })
+map("n", "<leader>xd", function()
+	require("trouble").toggle("document_diagnostics")
+end, { desc = "Document Diagnostic" })
+map("n", "<leader>xq", function()
+	require("trouble").toggle("quickfix")
+end, { desc = "Quickfix" })
+map("n", "<leader>xl", function()
+	require("trouble").toggle("loclist")
+end, { desc = "Location list" })
+map("n", "gR", function()
+	require("trouble").toggle("lsp_references")
+end, { desc = "Lsp References" })
+
 -- Neotest keymaps
 map("n", "<leader>tt", function()
 	require("neotest").run.run(vim.fn.expand("%"))
