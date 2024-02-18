@@ -23,6 +23,9 @@ map("n", "<leader>g", function() vscode.action("workbench.view.scm") end, { desc
 -- VSCode open test explorer
 map("n", "<leader>ft", function() vscode.action("workbench.view.extension.test") end, { desc = "Open test explorer" })
 
+-- Remap :s to VSCode search and replace
+map("n", "<leader>sr", function() vscode.action("editor.action.startFindReplaceAction") end, { desc = "Search and replace" })
+
 -- Better horizontal movement
 map("n", "<C-d>", "<C-d>zz")
 map("n", "<C-u>", "<C-u>zz")
