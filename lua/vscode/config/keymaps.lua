@@ -11,6 +11,22 @@ map("n", "<leader>cf", function() vscode.action("editor.action.formatDocument") 
 -- Search in all files
 map("n", "<leader>ff", function() vscode.action("workbench.action.findInFiles") end, { desc = "Search in all files" })
 
+-- VSCode open command pallet
+map("n", "<leader>cp", function() vscode.action("workbench.action.showCommands") end, { desc = "Open command pallet" })
+
+-- VSCode open file explorer
+map("n", "<leader>fe", function() vscode.action("workbench.view.explorer") end, { desc = "Open file explorer" })
+
+-- VSCode open source control
+map("n", "<leader>g", function() vscode.action("workbench.view.scm") end, { desc = "Open source control" })
+
+-- VSCode open test explorer
+map("n", "<leader>ft", function() vscode.action("workbench.view.extension.test") end, { desc = "Open test explorer" })
+
+-- Better horizontal movement
+map("n", "<C-d>", "<C-d>zz")
+map("n", "<C-u>", "<C-u>zz")
+
 -- Open "file tree"
 map({ "n", "v" }, "<leader><leader>", vim.cmd.Ex, { desc = "Search for file" })
 
