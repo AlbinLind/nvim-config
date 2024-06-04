@@ -26,20 +26,6 @@ map("n", "gR", function()
 	require("trouble").toggle("lsp_references")
 end, { desc = "Lsp References" })
 
--- Neotest keymaps
-map("n", "<leader>tt", function()
-	require("neotest").run.run(vim.fn.expand("%"))
-end, { desc = "Run File" })
-map("n", "<leader>tT", function()
-	require("neotest").run.run(vim.loop.cwd())
-end, { desc = "Run All Test Files" })
-map("n", "<leader>ts", function()
-	require("neotest").summary.toggle()
-end, { desc = "Toggle Summary" })
-map("n", "<leader>tS", function()
-	require("neotest").run.stop()
-end, { desc = "Stop" })
-
 -- LSP keys
 map({ "n", "v" }, "<leader>cl", "<cmd>LspInfo<cr>", { desc = "Lsp Info" })
 map({ "n", "v" }, "gr", "<cmd>Telescope lsp_references<cr>", { desc = "Grep references" })
