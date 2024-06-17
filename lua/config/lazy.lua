@@ -19,9 +19,6 @@ require("lazy").setup({
   -- Set up the defaults for plugins that we load, we only lazyload explicitly, version is unstable
   defaults = { lazy = false, version = false },
 
-  -- Install our colorscheme
-  install = { colorscheme = { "onedark" } },
-
   -- Lazy will check if there is updates when we start up
   checker = { enabled = true },
 })
