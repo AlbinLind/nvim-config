@@ -69,7 +69,7 @@ return {
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'williamboman/mason-lspconfig.nvim' },
     },
-    -- ensure_installed = { "docker_compose_language_service", "dockerls", "rust_analyzer" },
+    ensure_installed = { "docker_compose_language_service", "dockerls", "rust_analyzer" },
     config = function()
       -- This is where all the LSP shenanigans will live
       local lsp_zero = require('lsp-zero')
