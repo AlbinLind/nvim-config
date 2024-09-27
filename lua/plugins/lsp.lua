@@ -102,6 +102,19 @@ return {
             local lua_opts = lsp_zero.nvim_lua_ls()
             require('lspconfig').lua_ls.setup(lua_opts)
           end,
+          pylsp = function()
+            require('lspconfig').pylsp.setup({
+              settings = {
+                pylsp = {
+                  plugins = {
+                    pycodestyle = {
+                      maxLineLength = 120
+                    },
+                  }
+                }
+              }
+            })
+          end
         }
       })
     end
