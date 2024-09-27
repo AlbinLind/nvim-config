@@ -1,15 +1,16 @@
 return {
-	"nvim-treesitter/nvim-treesitter",
-	build = ":TSUpdate",
-	config = function()
-		local configs = require("nvim-treesitter.configs")
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+    config = function () 
+      local configs = require("nvim-treesitter.configs")
 
-		configs.setup({
-			ensure_installed = { "lua", "python", "rust", "javascript", "vue", "vimdoc", "yaml", "vim", "luadoc", "diff", "markdown", "toml"},
-			highlight = { enable = true },
-      sync_install = false,
-      auto_install = true,
-      ignore_install = {}
-		})
-	end,
+      configs.setup({
+          ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "html" },
+          sync_install = false,
+          highlight = { enable = true },
+          indent = { enable = true },  
+        })
+    end
+  }
 }

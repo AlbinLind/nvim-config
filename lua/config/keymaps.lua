@@ -1,30 +1,6 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
-
 vim.g.mapleader = " "
 
 local map = vim.keymap.set
-
--- Trouble keymaps
-map("n", "<leader>xx", function()
-	require("trouble").toggle()
-end, { desc = "Trouble Toggle" })
-map("n", "<leader>xw", function()
-	require("trouble").toggle("workspace_diagnostics")
-end, { desc = "Workspace Diagnostic" })
-map("n", "<leader>xd", function()
-	require("trouble").toggle("document_diagnostics")
-end, { desc = "Document Diagnostic" })
-map("n", "<leader>xq", function()
-	require("trouble").toggle("quickfix")
-end, { desc = "Quickfix" })
-map("n", "<leader>xl", function()
-	require("trouble").toggle("loclist")
-end, { desc = "Location list" })
-map("n", "gR", function()
-	require("trouble").toggle("lsp_references")
-end, { desc = "Lsp References" })
 
 -- LSP keys
 map({ "n", "v" }, "<leader>cl", "<cmd>LspInfo<cr>", { desc = "Lsp Info" })
@@ -32,15 +8,13 @@ map({ "n", "v" }, "gr", "<cmd>Telescope lsp_references<cr>", { desc = "Grep refe
 map({ "n", "v" }, "K", vim.lsp.buf.hover, { desc = "Hover over word" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
+map({ "n", "x" }, "<leader>cf", vim.lsp.buf.format, { desc = "Formats buffer" })
 
--- Undo-tree
-map({ "n", "v" }, "<leader>u", vim.cmd.UndotreeToggle, { desc = "Toggle UndoTree" })
+-- Rustacean keymaps
+map("n", "<leader>crc", "<cmd>RustLsp openCargo<cr>", {desc = "Open cargo.toml"})
 
--- Open "file tree"
+-- Open file tree
 map({ "n", "v" }, "<leader>e", vim.cmd.Ex, { desc = "Open file tree" })
-
--- Lazy Git
-map({ "n", "v" }, "<leader>gg", vim.cmd.LazyGit, { desc = "Open LazyGit" })
 
 -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
