@@ -23,6 +23,12 @@ map({ "n", "v", "x" }, "<leader>/", function() vscode.action("workbench.action.f
 -- Show open editors
 map({ "n", "v", "x" }, "<leader>b", function() vscode.action("workbench.action.showEditorsInActiveGroup") end, {})
 
+-- Open command palette
+map({ "n", "v", "x" }, "<leader>p", function() vscode.action("workbench.action.showCommands") end, { desc = "Open command palette" })
+
+-- Open Terminal
+map({ "n", "v", "x" }, "<leader>t", function() vscode.action("workbench.action.terminal.toggleTerminal") end, { desc = "Open terminal" })
+
 -- -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 map({ "n", "x" }, "<Down>", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
