@@ -24,10 +24,19 @@ map({ "n", "v", "x" }, "<leader>/", function() vscode.action("workbench.action.f
 map({ "n", "v", "x" }, "<leader>b", function() vscode.action("workbench.action.showEditorsInActiveGroup") end, {})
 
 -- Open command palette
-map({ "n", "v", "x" }, "<leader>p", function() vscode.action("workbench.action.showCommands") end, { desc = "Open command palette" })
+map({ "n", "v", "x" }, "<leader>p", function() vscode.action("workbench.action.showCommands") end,
+    { desc = "Open command palette" })
 
 -- Open Terminal
-map({ "n", "v", "x" }, "<leader>t", function() vscode.action("workbench.action.terminal.toggleTerminal") end, { desc = "Open terminal" })
+map({ "n", "v", "x" }, "<leader>t", function() vscode.action("workbench.action.terminal.toggleTerminal") end,
+    { desc = "Open terminal" })
+
+-- Editor keys
+map({ "n", "v", "x" }, "<leader>wd", function() vscode.action("workbench.action.closeActiveEditor") end,
+    { desc = "Close current editor" })
+map({ "n", "v", "x" }, "<leader>wa", function() vscode.action("workbench.action.closeAllEditors") end,
+    { desc = "Close all editors" })
+map({"n", "v", "x"}, "<leader>wc", function() vscode.action("explorer.newFile") end, { desc = "Close all editors" })
 
 -- -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
