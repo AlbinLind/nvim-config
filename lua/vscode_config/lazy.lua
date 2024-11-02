@@ -14,7 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
   -- Import and download plugins folder(s)
-  spec = { { import = "vscode.plugins" } },
+  spec = { { import = "vscode_config.plugins" } },
 
   -- Set up the defaults for plugins that we load, we only lazyload explicitly, version is unstable
   defaults = { lazy = false, version = false },

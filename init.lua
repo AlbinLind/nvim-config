@@ -3,7 +3,7 @@ if vim.g.vscode then
     -- vscode init
   require("vscode_config.set")
   require("vscode_config.keymaps")
-  -- require("vscode_config.lazy")
+  require("vscode_config.lazy")
 else
   require("config.set")
   require("config.keymaps")

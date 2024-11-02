@@ -14,6 +14,7 @@ map({ "n", "v" }, "<leader>ca", function() vscode.action("editor.action.quickFix
 
 -- Open file tree
 map({ "n", "v" }, "<leader>e", function () vscode.action("workbench.view.explorer") end, { desc = "Open file tree" })
+map({ "n", "v" }, "<leader>gg", function () vscode.action("workbench.view.scm") end, { desc = "Open git" })
 
 -- Open quick search
 map({ "n", "v", "x"}, "<leader><leader>", vim.cmd.Ex, {})
