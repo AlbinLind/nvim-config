@@ -13,15 +13,15 @@ map({ "n", "x" }, "<leader>cf", vim.lsp.buf.format, { desc = "Formats buffer" })
 map({ "n", "v" }, "<leader>ca", function() vscode.action("editor.action.quickFix") end, { desc = "Code action" })
 
 -- Open file tree
-map({ "n", "v" }, "<leader>e", function () vscode.action("workbench.view.explorer") end, { desc = "Open file tree" })
-map({ "n", "v" }, "<leader>gg", function () vscode.action("workbench.view.scm") end, { desc = "Open git" })
+map({ "n", "v" }, "<leader>e", function() vscode.action("workbench.view.explorer") end, { desc = "Open file tree" })
+map({ "n", "v" }, "<leader>gg", function() vscode.action("workbench.view.scm") end, { desc = "Open git" })
 
 -- Open quick search
-map({ "n", "v", "x"}, "<leader><leader>", vim.cmd.Ex, {})
-map({ "n", "v", "x"}, "<leader>/", function() vscode.action("workbench.action.findInFiles") end, {})
+map({ "n", "v", "x" }, "<leader><leader>", vim.cmd.Ex, {})
+map({ "n", "v", "x" }, "<leader>/", function() vscode.action("workbench.action.findInFiles") end, {})
 
 -- Show open editors
-map({"n", "v", "x"}, "<leader>b", function() vscode.action("workbench.action.showEditorsInActiveGroup") end,  {})
+map({ "n", "v", "x" }, "<leader>b", function() vscode.action("workbench.action.showEditorsInActiveGroup") end, {})
 
 -- -- better up/down
 map({ "n", "x" }, "j", "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
