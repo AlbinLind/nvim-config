@@ -3,6 +3,9 @@
 -- Enable automatically formatting
 vim.g.autoformat = true
 
+-- Enable relative line numbers in netrw
+vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
+
 -- Find root directory
 vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 
