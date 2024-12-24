@@ -50,8 +50,46 @@ return { {
       "stevearc/conform.nvim"
     },
     opts = {
+      diagnostics = {
+        underline = true,
+        update_in_insert = false,
+        virtual_text = {
+          prefix = "",
+          source = "if_many",
+          spacing = 4,
+        },
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = " ",
+            [vim.diagnostic.severity.WARN] = " ",
+            [vim.diagnostic.severity.HINT] = " ",
+            [vim.diagnostic.severity.INFO] = " ",
+          },
+        }
+      },
       servers = {
         lua_ls = {},
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                typeCheckingMode = "standard"
+              }
+            }
+          }
+        },
+        rust_analyzer = {},
+        marksman = {},
+        harper_ls = {},
+        taplo = {},
+        ruff = {
+          on_attach = function(client, bufnr)
+            vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>co',
+              '<cmd>lua vim.lsp.buf.code_action({apply = true,context = {only = {"source.organizeImports"},diagnostics = {},}})<cr>',
+              { desc = "Organize Imports", noremap = true, silent = true })
+            client.server_capabilities.hoverProvider = false
+          end
+        }
       }
     },
     config = function(_, opts)
@@ -66,15 +104,6 @@ return { {
         config.capabilities = require('blink.cmp').get_lsp_capabilities(config.capabilities)
         lspconfig[server].setup(config)
       end
-
-      -- Add custom keymap for ruff
-      lspconfig["ruff"].setup({
-        on_attach = function(client, bufnr)
-          vim.api.nvim_buf_set_keymap(bufnr, 'n', '<leader>co',
-            '<cmd>lua vim.lsp.buf.code_action({apply = true,context = {only = {"source.organizeImports"},diagnostics = {},}})<cr>',
-            { desc = "Organize Imports", noremap = true, silent = true })
-        end
-      })
     end
   },
   {
@@ -85,9 +114,9 @@ return { {
       config = function() end,
       opts = {
         ensure_installed = {
-          -- "lua_ls",
+          "lua_ls",
           "basedpyright",
-          "ruff-lsp",
+          "ruff",
           "rust_analyzer",
           "marksman",
           "harper_ls",
