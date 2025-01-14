@@ -4,7 +4,10 @@ local map = vim.keymap.set
 
 -- LSP keys
 map({ "n", "v" }, "<leader>cl", "<cmd>LspInfo<cr>", { desc = "Lsp Info" })
-map({ "n", "v" }, "gr", "<cmd>Telescope lsp_references<cr>", { desc = "Grep references" })
+-- map({ "n", "v" }, "gr", "<cmd>Telescope lsp_references<cr>", { desc = "Grep references" })
+map({ "n", "v" }, "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+map({ "n", "v" }, "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
+map({ "n", "v" }, "gr", vim.lsp.buf.references, { desc = "Go to references" })
 map({ "n", "v" }, "K", vim.lsp.buf.hover, { desc = "Hover over word" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })

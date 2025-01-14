@@ -70,6 +70,7 @@ return { {
       servers = {
         lua_ls = {},
         basedpyright = {
+          file_types = { "python" },
           settings = {
             basedpyright = {
               analysis = {
@@ -89,7 +90,8 @@ return { {
               { desc = "Organize Imports", noremap = true, silent = true })
             client.server_capabilities.hoverProvider = false
           end
-        }
+        },
+        ts_ls = {}
       }
     },
     config = function(_, opts)
@@ -122,6 +124,7 @@ return { {
           "harper_ls",
           "taplo",
           "stylua",
+          "ts_ls"
         },
       }
     }
