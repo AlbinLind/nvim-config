@@ -91,7 +91,10 @@ return { {
             client.server_capabilities.hoverProvider = false
           end
         },
-        ts_ls = {}
+        ts_ls = {},
+        fixjson = {
+          filetypes = { "json" }
+        },
       }
     },
     config = function(_, opts)
@@ -124,7 +127,8 @@ return { {
           "harper_ls",
           "taplo",
           "stylua",
-          "ts_ls"
+          "ts_ls",
+          "fixjson",
         },
       }
     }
