@@ -13,9 +13,6 @@ map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" 
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 map({ "n", "x" }, "<leader>cf", vim.lsp.buf.format, { desc = "Formats buffer" })
 
--- Rustacean keymaps
-map("n", "<leader>crc", "<cmd>RustLsp openCargo<cr>", {desc = "Open cargo.toml"})
-
 -- Open file tree
 map({ "n", "v" }, "<leader>e", vim.cmd.Ex, { desc = "Open file tree" })
 
