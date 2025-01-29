@@ -92,9 +92,7 @@ return { {
           end
         },
         ts_ls = {},
-        fixjson = {
-          filetypes = { "json" }
-        },
+        jsonls = {},
       }
     },
     config = function(_, opts)
@@ -128,7 +126,7 @@ return { {
           "taplo",
           "stylua",
           "ts_ls",
-          "fixjson",
+          "jsonls",
         },
       }
     }
@@ -145,7 +143,7 @@ return { {
         },
         lua = {
           "stylua"
-        }
+        },
       }
     }
   }
