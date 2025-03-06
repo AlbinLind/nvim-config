@@ -2,9 +2,17 @@ return {
   "folke/which-key.nvim",
   event = "VeryLazy",
   opts = {
-    -- your configuration comes here
-    -- or leave it empty to use the default settings
-    -- refer to the configuration section below
+    spec = {
+      {
+        mode = { "n", "v" },
+        { "<leader>g",  group = "comment+git" },
+        { "<leader>gh", group = "hunks" },
+        { "<leader>s",  group = "search" },
+        { "<leader>c",  group = "code" },
+        { "<leader>f",  group = "find" },
+        { "<leader>b",  group = "buffer" },
+      }
+    },
   },
   keys = {
     {

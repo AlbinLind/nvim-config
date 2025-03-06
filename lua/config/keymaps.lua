@@ -4,14 +4,19 @@ local map = vim.keymap.set
 
 -- LSP keys
 map({ "n", "v" }, "<leader>cl", "<cmd>LspInfo<cr>", { desc = "Lsp Info" })
-map({ "n", "v" }, "gr", "<cmd>Telescope lsp_references<cr>", { desc = "Grep references" })
+-- map({ "n", "v" }, "gr", "<cmd>Telescope lsp_references<cr>", { desc = "Grep references" })
+map({ "n", "v" }, "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
+map({ "n", "v" }, "gD", vim.lsp.buf.declaration, { desc = "Go to declaration" })
+map({ "n", "v" }, "gr", function()
+  require("telescope.builtin").lsp_references({
+    prompt_title = "References",
+    ignore_filename = true,
+  })
+end, { desc = "Go to references" })
 map({ "n", "v" }, "K", vim.lsp.buf.hover, { desc = "Hover over word" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 map({ "n", "x" }, "<leader>cf", vim.lsp.buf.format, { desc = "Formats buffer" })
-
--- Rustacean keymaps
-map("n", "<leader>crc", "<cmd>RustLsp openCargo<cr>", {desc = "Open cargo.toml"})
 
 -- Open file tree
 map({ "n", "v" }, "<leader>e", vim.cmd.Ex, { desc = "Open file tree" })

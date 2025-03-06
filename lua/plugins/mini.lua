@@ -4,12 +4,12 @@ return {
     version = '*',
     opts = {
       mappings = {
-        add = "gsa",          -- Add surrounding in Normal and Visual modes
-        delete = "gsd",       -- Delete surrounding
-        find = "gsf",         -- Find surrounding (to the right)
-        find_left = "gsF",    -- Find surrounding (to the left)
-        highlight = "gsh",    -- Highlight surrounding
-        replace = "gsr",      -- Replace surrounding
+        add = "gsa",            -- Add surrounding in Normal and Visual modes
+        delete = "gsd",         -- Delete surrounding
+        find = "gsf",           -- Find surrounding (to the right)
+        find_left = "gsF",      -- Find surrounding (to the left)
+        highlight = "gsh",      -- Highlight surrounding
+        replace = "gsr",        -- Replace surrounding
         update_n_lines = "gsn", -- Update `n_lines`
       },
     },
@@ -39,14 +39,12 @@ return {
       require("mini.pairs").setup({})
     end,
   },
-
   -- Visualize the indentation
   {
     "echasnovski/mini.indentscope",
-    version = false, -- wait till new 0.7.0 release to put it back on semver
+    version = "*",
     event = "VeryLazy",
     opts = {
-      -- symbol = "▏",
       symbol = "│",
       options = { try_as_border = true },
     },
