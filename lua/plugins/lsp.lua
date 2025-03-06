@@ -1,7 +1,7 @@
 return { {
   'saghen/blink.cmp',
   -- use a release tag to download pre-built binaries
-  version = '0.8.*',
+  version = '*',
 
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
