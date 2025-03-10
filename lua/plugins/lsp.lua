@@ -16,6 +16,20 @@ return { {
       ["<C-space>"] = { "show" },
 
     },
+    cmdline = {
+      enabled = true,
+      keymap = {
+        preset = "default",
+        ["<C-j>"] = { "select_and_accept", "accept" },
+        ["<C-space>"] = { "show" },
+
+      },
+      completion = {
+        menu = {
+          auto_show = true,
+        }
+      }
+    },
 
     appearance = {
       -- Sets the fallback highlight groups to nvim-cmp's highlight groups
