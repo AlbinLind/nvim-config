@@ -81,7 +81,6 @@ return { {
         },
         rust_analyzer = {},
         marksman = {},
-        harper_ls = {},
         taplo = {},
         ruff = {
           on_attach = function(client, bufnr)
@@ -122,7 +121,6 @@ return { {
           "ruff",
           "rust_analyzer",
           "marksman",
-          "harper_ls",
           "taplo",
           "stylua",
           "ts_ls",
