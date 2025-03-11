@@ -1,7 +1,7 @@
 return { {
   'saghen/blink.cmp',
   -- use a release tag to download pre-built binaries
-  version = '0.8.*',
+  version = '*',
 
   ---@module 'blink.cmp'
   ---@type blink.cmp.Config
@@ -15,6 +15,20 @@ return { {
       ["<C-j>"] = { "select_and_accept", "accept" },
       ["<C-space>"] = { "show" },
 
+    },
+    cmdline = {
+      enabled = true,
+      keymap = {
+        preset = "default",
+        ["<C-j>"] = { "select_and_accept", "accept" },
+        ["<C-space>"] = { "show" },
+
+      },
+      completion = {
+        menu = {
+          auto_show = true,
+        }
+      }
     },
 
     appearance = {
