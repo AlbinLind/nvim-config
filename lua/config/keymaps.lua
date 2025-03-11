@@ -18,6 +18,14 @@ map({ "n", "v" }, "K", vim.lsp.buf.hover, { desc = "Hover over word" })
 map({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 map("n", "<leader>cr", vim.lsp.buf.rename, { desc = "Rename" })
 map({ "n", "x" }, "<leader>cf", vim.lsp.buf.format, { desc = "Formats buffer" })
+map({ "n", "v" }, "<leader>ci", vim.lsp.buf.implementation, { desc = "Go to implementation" })
+map({ "n", "v" }, "<leader>ct", function()
+    require("lsp_lines").toggle()
+  end,
+  { desc = "Toggle LSP diagnostics inline" }
+)
+map({ "n", "v" }, "<leader>cn", vim.diagnostic.goto_next, { desc = "Go to next diagnostic" })
+map({ "n", "v" }, "<leader>cp", vim.diagnostic.goto_prev, { desc = "Go to previous diagnostic" })
 
 -- Open file tree
 map({ "n", "v" }, "<leader>e", vim.cmd.Ex, { desc = "Open file tree" })
