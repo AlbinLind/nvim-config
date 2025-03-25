@@ -106,6 +106,11 @@ return { {
         },
         ts_ls = {},
         jsonls = {},
+        texlab = {
+          keys = {
+            { "<Leader>K", "<plug>(vimtex-doc-package)", desc = "Vimtex Docs", silent = true },
+          },
+        },
       }
     },
     config = function(_, opts)
@@ -139,6 +144,7 @@ return { {
           "stylua",
           "ts_ls",
           "jsonls",
+          "texlab",
         },
       }
     }
