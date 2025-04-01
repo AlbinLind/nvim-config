@@ -60,12 +60,12 @@ map({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsea
 
 -- Always use n to search forward and N backwards
 -- https://github.com/mhinz/vim-galore#saner-behavior-of-n-and-n
-map("n", "n", "'Nn'[v:searchforward].'zv'", { expr = true, desc = "Next search result" })
-map("x", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-map("o", "n", "'Nn'[v:searchforward]", { expr = true, desc = "Next search result" })
-map("n", "N", "'nN'[v:searchforward].'zv'", { expr = true, desc = "Prev search result" })
-map("x", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
-map("o", "N", "'nN'[v:searchforward]", { expr = true, desc = "Prev search result" })
+map("n", "n", "'Nn'[v:searchforward].'zz'", { expr = true, desc = "Next search result" })
+map("x", "n", "'Nn'[v:searchforward]'zz'", { expr = true, desc = "Next search result" })
+map("o", "n", "'Nn'[v:searchforward]'zz'", { expr = true, desc = "Next search result" })
+map("n", "N", "'nN'[v:searchforward].'zz'", { expr = true, desc = "Prev search result" })
+map("x", "N", "'nN'[v:searchforward]'zz'", { expr = true, desc = "Prev search result" })
+map("o", "N", "'nN'[v:searchforward]'zz'", { expr = true, desc = "Prev search result" })
 
 -- Save file
 map({ "i", "x", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Save file" })
@@ -76,3 +76,7 @@ map("n", "<leader>K", "<cmd>norm! K<cr>", { desc = "Keywordprg" })
 -- better indenting
 map("v", "<", "<gv")
 map("v", ">", ">gv")
+
+-- Jump to start and end of line
+map("n", "H", "^")
+map("n", "L", "$")
