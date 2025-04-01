@@ -61,7 +61,7 @@ opt.wildmode = "longest:full,full" -- Command-line completion mode
 opt.winminwidth = 5                -- Minimum window width
 opt.wrap = false                   -- Disable line wrap
 opt.colorcolumn = "80"             -- Line length marker at 80 columns
-opt.api.nvim_create_autocmd("Filetype", {
+vim.api.nvim_create_autocmd("Filetype", {
   pattern = "python",
   command = "set colorcolumn=100",
 })
