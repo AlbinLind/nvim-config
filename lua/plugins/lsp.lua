@@ -145,6 +145,7 @@ return { {
           "ts_ls",
           "jsonls",
           "texlab",
+          "tex-fmt",
         },
       }
     }
@@ -161,6 +162,9 @@ return { {
         },
         lua = {
           "stylua"
+        },
+        latex = {
+          "tex-fmt"
         },
       }
     }
