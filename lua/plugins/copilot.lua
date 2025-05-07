@@ -19,6 +19,7 @@ return {
       markdown = false,
       help = false,
       latex = false,
+      tex = false,
       gitcommit = false,
       gitrebase = false,
     },
