@@ -59,8 +59,8 @@ return { {
   {
     'neovim/nvim-lspconfig',
     dependencies = { 'saghen/blink.cmp',
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
+      { "williamboman/mason.nvim",           version = "1.*" },
+      { "williamboman/mason-lspconfig.nvim", version = "1.*" },
       "stevearc/conform.nvim"
     },
     opts = {
@@ -128,9 +128,10 @@ return { {
     end
   },
   {
-    "mason.nvim",
+    { "mason.nvim", version = "1.*" },
     {
       "williamboman/mason-lspconfig.nvim",
+      version = "1.*",
       lazy = false,
       config = function() end,
       opts = {
@@ -164,6 +165,9 @@ return { {
           "stylua"
         },
         latex = {
+          "tex-fmt"
+        },
+        tex = {
           "tex-fmt"
         },
       }
