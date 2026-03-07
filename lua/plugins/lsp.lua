@@ -173,6 +173,7 @@ return {
 				"json-lsp",
 				"texlab",
 				"tex-fmt",
+				"prettierd",
 			},
 		},
 		config = function(_, opts)
@@ -207,6 +208,9 @@ return {
 				lua = { "stylua" },
 				latex = { "tex-fmt" },
 				tex = { "tex-fmt" },
+				typescript = { "prettierd" },
+				typescriptreact = { "prettierd" },
+				json = { "prettierd" },
 			},
 		},
 	},
