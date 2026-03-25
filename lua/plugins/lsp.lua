@@ -204,7 +204,7 @@ return {
 				lsp_format = "fallback",
 			},
 			formatters_by_ft = {
-				python = { "ruff" },
+				python = { "ruff_format" },
 				lua = { "stylua" },
 				latex = { "tex-fmt" },
 				tex = { "tex-fmt" },
