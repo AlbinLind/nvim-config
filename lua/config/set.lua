@@ -3,6 +3,9 @@
 -- Enable automatically formatting
 vim.g.autoformat = true
 
+-- Get the correct shell
+vim.opt.shell = vim.fn.exepath("fish")
+
 -- Enable relative line numbers in netrw
 vim.g.netrw_bufsettings = 'noma nomod nu rnu nobl nowrap ro'
 
