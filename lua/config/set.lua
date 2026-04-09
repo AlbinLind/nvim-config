@@ -12,7 +12,7 @@ vim.g.root_spec = { "lsp", { ".git", "lua" }, "cwd" }
 local opt = vim.opt
 
 opt.autowrite = true                      -- Enable auto writes
-opt.clipboard = "unnamedplus"             -- Sync with system clipboard
+opt.clipboard = vim.env.SSH_TTY and "" or "unnamedplus"            -- Sync with system clipboard
 opt.completeopt = "menu,menuone,noselect" -- Autocomplet menu
 opt.confirm = true                        -- Confirm to save changes before exiting modified buffers
 opt.cursorline = true                     -- Enable highlighting of the current lines
